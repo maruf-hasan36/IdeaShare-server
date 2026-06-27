@@ -267,12 +267,10 @@ app.patch(
       const result = await usersCollection.updateOne(filter, updateDoc);
 
       if (result.modifiedCount > 0 || result.matchedCount > 0) {
-        res
-          .status(200)
-          .send({
-            success: true,
-            message: `User role updated to ${role} successfully!`,
-          });
+        res.status(200).send({
+          success: true,
+          message: `User role updated to ${role} successfully!`,
+        });
       } else {
         res.status(400).send({ success: false, message: "No changes made." });
       }
@@ -295,12 +293,10 @@ app.delete(
       const result = await usersCollection.deleteOne(filter);
 
       if (result.deletedCount === 1) {
-        res
-          .status(200)
-          .send({
-            success: true,
-            message: "User account deleted successfully!",
-          });
+        res.status(200).send({
+          success: true,
+          message: "User account deleted successfully!",
+        });
       } else {
         res.status(404).send({ success: false, message: "User not found" });
       }
@@ -376,12 +372,10 @@ app.patch(
         await featuredCollection.deleteOne({ lessonId: new ObjectId(id) });
       }
 
-      res
-        .status(200)
-        .send({
-          success: true,
-          message: `Featured status updated to ${isFeatured}`,
-        });
+      res.status(200).send({
+        success: true,
+        message: `Featured status updated to ${isFeatured}`,
+      });
     } catch (error) {
       console.error("Featured Update Error:", error);
       res.status(500).send({ success: false, error: error.message });
@@ -1079,7 +1073,7 @@ app.get("/api/top-contributors", async (req, res) => {
   }
 });
 
-// await client.db("admin").command({ ping: 1 });
+// await client.db("admin").command({ ping: 1 })
 // console.log("Pinged your deployment. You successfully connected to MongoDB!");
 
 //     } catch (err) {
