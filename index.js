@@ -1126,6 +1126,3 @@ app.get("/", (req, res) => {
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
-
-// all code rechecked and working fine.
-// have added new features like top contributors, featured lessons, and user dashboard stats.
