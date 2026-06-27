@@ -1029,7 +1029,7 @@ app.post("/api/payments", verifyToken, async (req, res) => {
 });
 
 // ==========================================
-// Top Contributor
+// Top Contributors
 // ==========================================
 app.get("/api/top-contributors", async (req, res) => {
   try {
